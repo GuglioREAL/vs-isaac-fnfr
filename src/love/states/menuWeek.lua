@@ -29,7 +29,6 @@ local songDifficulty = 2
 
 local titleBG = graphics.newImage(love.graphics.newImage(graphics.imagePath("menu/storymenu/weekMenu")))
 
-local enemyDanceLines = love.filesystem.load("sprites/menu/storymenu/idlelines.lua")()
 
 local difficultyAnim = love.filesystem.load("sprites/menu/storymenu/difficulty.lua")()
 
@@ -53,7 +52,6 @@ week4 = graphics.newImage(love.graphics.newImage(graphics.imagePath("menu/storym
 week5 = graphics.newImage(love.graphics.newImage(graphics.imagePath("menu/storymenu/week5")))
 week6 = graphics.newImage(love.graphics.newImage(graphics.imagePath("menu/storymenu/week6")))
 
-enemyDanceLines.sizeX, enemyDanceLines.sizeY = 0.5, 0.5
 
 local selectSound = love.audio.newSource("sounds/menu/select.ogg", "static")
 local confirmSound = love.audio.newSource("sounds/menu/confirm.ogg", "static")
@@ -62,7 +60,6 @@ local function switchMenu(menu)
 
 end
 
-enemyDanceLines.x, enemyDanceLines.y = -375, -170
 
 bfDanceLines.sizeX, bfDanceLines.sizeY = 0.7, 0.7
 gfDanceLines.sizeX, gfDanceLines.sizeY = 0.5, 0.5
@@ -76,7 +73,6 @@ return {
 	enter = function(self, previous)
         bfDanceLines:animate("boyfriend", true)
 		gfDanceLines:animate("girlfriend", true)
-		enemyDanceLines:animate("none", true)
 		songNum = 0
 		weekNum = 1
 		trackNames = "\nSacrificial\nInnocence-Glitched"
@@ -133,7 +129,6 @@ return {
 			end
 		end
 		
-		enemyDanceLines:update(dt)
 		bfDanceLines:update(dt)
 		gfDanceLines:update(dt)
 
@@ -145,11 +140,7 @@ return {
 			difficultyAnim:animate("hard", true)
 		end
 
-		if weekNum ~= 7 then
-			enemyDanceLines.sizeX, enemyDanceLines.sizeY = 0.5, 0.5
-		elseif weekNum == 7 then
-			enemyDanceLines.sizeX, enemyDanceLines.sizeY = 1, 1
-		end
+
 
 		difficultyAnim:update(dt)
 
@@ -215,9 +206,7 @@ return {
 				love.graphics.scale(cam.sizeX, cam.sizeY)
 
 				difficultyAnim:draw()
-				if weekNum ~= 1 then
-					enemyDanceLines:draw()
-				end
+
 				bfDanceLines:draw()
 				gfDanceLines:draw()
 
