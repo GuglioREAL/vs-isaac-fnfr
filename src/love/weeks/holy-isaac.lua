@@ -36,9 +36,9 @@ return {
 
 		enemy = love.filesystem.load("sprites/characters/holyisaac.lua")()
 
-		girlfriend.x, girlfriend.y = 30, -90
+		girlfriend.x, girlfriend.y = 30, 10
 		enemy.x, enemy.y = -380, -40
-		boyfriend.x, boyfriend.y = 260, 100
+		boyfriend.x, boyfriend.y = 260, 220
 
 		enemyIcon:animate("isaac", false)
 
@@ -78,7 +78,7 @@ return {
 		end
 
 		if not (countingDown or graphics.isFading()) and not (inst:isPlaying() and voices:isPlaying()) then
-			if storyMode and song < 2 then
+			if storyMode and song < 1 then
 				song = song + 1
 
 				self:load()

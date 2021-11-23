@@ -114,6 +114,10 @@ return graphics.newSprite(
 		["right"] = {start = 31, stop = 45, speed = 24, offsetX = 0, offsetY = 0},
 		["up"] = {start = 16, stop = 30, speed = 24, offsetX = 0, offsetY = 0},
 		["idle"] = {start = 46, stop = 60, speed = 24, offsetX = 0, offsetY = 0},
+		["down alt"] = {start = 1, stop = 15, speed = 24, offsetX = 0, offsetY = 0},
+		["left alt"] = {start = 61, stop = 75, speed = 24, offsetX = 0, offsetY = 0},
+		["right alt"] = {start = 31, stop = 45, speed = 24, offsetX = 0, offsetY = 0},
+		["up alt"] = {start = 16, stop = 30, speed = 24, offsetX = 0, offsetY = 0},
 		["anim"] = {start = 76, stop = 105, speed = 24, offsetX = 0, offsetY = 0}
     },
     "idle",

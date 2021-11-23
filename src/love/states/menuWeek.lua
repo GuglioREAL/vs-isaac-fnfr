@@ -124,7 +124,7 @@ return {
 				trackNames = "\nSacrificial\nInnocence-Glitched"
 				menuDesc = "THE FUNKIN' OF ISAAC"
 			elseif weekNum == 2 then
-				trackNames = "Innermost-Apocalypse"
+				trackNames = "\nInnermost-Apocalypse"
 				menuDesc = "THE END"
 			end
 		end
@@ -148,7 +148,7 @@ return {
 			if input:pressed("down") then
 				audio.playSound(selectSound)
 
-				if weekNum ~= 7 then
+				if weekNum ~= 2 then
 					weekNum = weekNum + 1
 				else
 					weekNum = 1
@@ -161,7 +161,7 @@ return {
 				if weekNum ~= 1 then
 					weekNum = weekNum - 1
 				else
-					weekNum = 7
+					weekNum = 2
 				end
 				menuFunc()
 
@@ -224,51 +224,6 @@ return {
 
 					tutorial:draw()
 					week1:draw()
-					week2:draw()
-
-				elseif weekNum == 3 then
-					week1.y = 130
-					week3.y = 320
-					week2.x, week2.y = 0, 220
-
-					week1:draw()
-					week2:draw()
-					week3:draw()
-
-				elseif weekNum == 4 then
-					week2.y = 130
-					week4.y = 320
-					week3.x, week3.y = 0, 220
-
-					week2:draw()
-					week3:draw()
-					week4:draw()
-
-				elseif weekNum == 5 then
-					week5.y = 320
-					week3.y = 130
-					week4.x, week4.y = 0, 220
-
-					week3:draw()
-					week4:draw()
-					week5:draw()
-
-				elseif weekNum == 6 then
-					
-					week6.y = 320
-					week4.y = 130
-					week5.x, week5.y = 0, 220
-
-					week4:draw()
-					week5:draw()
-					week6:draw()
-					
-				elseif weekNum == 7 then
-					week6.x, week6.y = 0, 220
-					week5.y = 130
-
-					week5:draw()
-					week6:draw()
 				end
 				
 				love.graphics.printf(menuDesc, -585, -395, 853, "right", nil, 1.5, 1.5)
